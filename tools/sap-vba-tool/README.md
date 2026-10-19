@@ -7,8 +7,11 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
    - Đã xử lý triệt để: Tự quét VL10D cho nhánh 3001, tự hủy dòng mã ngoài trong OB 3001 trước khi Save (khử lỗi WMS VL589), và vá lỗi sập đọc lại chứng từ VL03N.
 
 2. **260810_RA_DON_NVL_V31_ZONE.xlsm**:
-   - Công cụ **Ra đơn Nguyên vật liệu theo Zone** (Bản V31 Zone Line Limo).
-   - Đã tích hợp danh mục Zone 3.1, 3.2, 3.3, 3.4 cho KV-16, phân loại FIFO và gom OB theo Zone line.
+   - Công cụ **Ra đơn Nguyên vật liệu theo Zone** (Bản V31 Zone Line Limo mới nhất).
+   - Tối ưu động theo chỉ đạo: Không giới hạn danh mục mã cứng, cho phép mọi mã linh kiện chạy phân bổ FIFO bình thường.
+   - Cơ chế gom đơn linh hoạt theo Zone line: **Zone 12 thì gom 12, Zone 22 thì tự gom 22**, tuyệt đối không lẫn lộn Zone trong cùng đơn OB.
+   - Cấu trúc thứ bậc gom đơn chuẩn hóa: **ZONE** (Ưu tiên 1) $\rightarrow$ **TÊN TL** (Ưu tiên 2) $\rightarrow$ **TRẠM** (Ưu tiên 3).
+   - VBE Compile Native PASS 100%, MIGO 311 precheck xác thực 0 lỗi.
 
 3. **261008_Stock_FG_MA_BODY.xlsm**:
    - Công cụ **Quản trị & Cảnh báo tồn kho Thành phẩm** (Bản chuẩn V3.7).
