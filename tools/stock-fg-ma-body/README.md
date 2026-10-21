@@ -4,42 +4,36 @@ Công cụ giám sát tồn kho thành phẩm (FG) và cảnh báo nguy cơ thi�
 
 ---
 
-## 📌 Phiên bản phát hành mới nhất: V3.7.8 (21/10/2026)
+## 📌 Phiên bản phát hành mới nhất: V3.7.8 (21/10/2026 - Bản Fix Kaizen Matrix & Panel Lock)
 
-* **Tệp Excel chính thức**: [`261008_Stock_FG_MA_BODY.xlsm`](./261008_Stock_FG_MA_BODY.xlsm) (SHA-256: `CC72B1B6D3E4AA895543647258724169A1CA438F99FC5578BA3B0D029E4CE880`)
-* **Gói nén ZIP tiêu chuẩn**: [`261008_Stock_FG_MA_BODY.zip`](./261008_Stock_FG_MA_BODY.zip) (SHA-256: `E198D4CC9A4D23325F5AFE1ECF5835E958BE9B927DAF9621361538572627EF3A`)
-* **Bản cập nhật BODYY**: [`261008_Stock_FG_MA_BODYY.xlsm`](./261008_Stock_FG_MA_BODYY.xlsm) (SHA-256: `6D8A72F13D3041AD1E2CD3DE09DFB14B57A2D895B11882A2BBB70525C9A41E6E`) | [`ZIP`](./261008_Stock_FG_MA_BODYY.zip) (SHA-256: `EDAC537375938851AA87DB9B8E694DDF6B2B8F296B9DD014B0BD316A12B8C7E0`)
+* **Tệp Excel chính thức**: [`261008_Stock_FG_MA_BODY.xlsm`](./261008_Stock_FG_MA_BODY.xlsm) (SHA-256: `792D3BD843770D301D4D5C38DBFD7FB39524A5B280F3A127CDDE7FD396C8FE3C`)
+* **Gói nén ZIP tiêu chuẩn**: [`261008_Stock_FG_MA_BODY.zip`](./261008_Stock_FG_MA_BODY.zip) (SHA-256: `21138C47223B02BB3B50DA6B6DC2BA49AF3E16F347A11249127E3595A033FA37`)
+* **Bản cập nhật BODYY**: [`261008_Stock_FG_MA_BODYY.xlsm`](./261008_Stock_FG_MA_BODYY.xlsm) (SHA-256: `289DBA3C3B2760C23F2F5A31E7E6BAE8EB3FFC07A8604DB5023F2636C185C07E`) | [`ZIP`](./261008_Stock_FG_MA_BODYY.zip) (SHA-256: `E1E746A23056A8A7AA51B9FA3546C85E213ABF826455BD244838E4BA1C8A4C5E`)
 * **Bản phiên hiệu V3.7 đồng bộ**: [`261008_Stock_FG_MA_BODY_V3_7.xlsm`](./261008_Stock_FG_MA_BODY_V3_7.xlsm) | [`ZIP`](./261008_Stock_FG_MA_BODY_V3_7.zip)
-* **Ghi chú kỹ thuật chi tiết**: [`RELEASE_NOTES_V3_7.md`](./RELEASE_NOTES_V3_7.md)
+* **Ghi chú kỹ thuật chi tiết**: [`RELEASE_NOTES_V3_7_8.md`](./RELEASE_NOTES_V3_7_8.md)
 
 ---
 
 ## 🛠 Tính năng nổi bật & Cập nhật mới (V3.7.8 - 21/10/2026)
 
-1. **Sheet Báo Cáo Tổng Thể Kaizen 2H (`BAO CAO TONG THE`)**:
-   - Tự động thống kê ma trận phân bổ dải số xe (0, 1-20, 21-50, 51-100, 101-150, 151-200, 201-300, 301-400, >400 xe) theo từng Model xe (VF3, VF5, VF6, VF7, VF8, VF9, VFe34, EC...).
-   - Bao gồm 2 bảng ma trận chuẩn:
-     * **Bảng 1**: Thống kê theo `KHO BODY`.
-     * **Bảng 2**: Thống kê theo `(LINE + KHO) BODY`.
-   - Phân nhóm tổng hợp trực quan: Cột `<= 200XE` (nhóm ưu tiên kiểm soát nguy cơ) và Cột `> 200XE` (nhóm an toàn).
-   - Tích hợp nút bấm **`LÀM MỚI BÁO CÁO`** và **`GỬI BÁO CÁO TEAMS (2H)`** ngay trên sheet.
+1. **Khắc phục triệt để lỗi tính toán & hiển thị tỷ lệ % trên Báo Cáo Tổng Thể (`BAO CAO TONG THE`)**:
+   - Sửa lỗi điều kiện dừng vòng lặp: Thay thế điều kiện so sánh chuỗi bằng bẫy số nguyên chuẩn xác `IsNumeric(Stt) And Val(Stt) > 0`.
+   - Triệt tiêu 100% hiện tượng vòng lặp xóa nhầm dòng `Tổng SL mã`, chèn thêm dòng thừa (dòng 24) và ghi đè giá trị số lên dòng tỷ lệ gây ra lỗi hiển thị `120800%` và `41900%`.
+   - Tỷ lệ % tại dòng 23 và dòng 42 hiển thị chuẩn xác từng phân vị (0XE: 28%, <=50XE: 8%, <=100XE: 13%, ..., Tổng: 100%).
 
-2. **Khắc phục triệt để lỗi trôi thời gian hẹn giờ (Anti-Drift Fixed Wall-Clock Timer)**:
-   - Cơ chế neo mốc tròn đồng hồ (`GetNextRoundClock`): 
-     * Chu kỳ 60 phút neo chính xác: `07:00, 08:00, 09:00, 10:00...`
-     * Chu kỳ 120 phút neo chính xác các mốc chẵn: `06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00...`
-   - Dù tác vụ chạy mất bao nhiêu giây/phút, thời gian kích hoạt kế tiếp luôn khóa cố định theo mặt đồng hồ thực, không bao giờ bị trôi lệch tích lũy qua các ngày.
+2. **Khóa cứng tọa độ Panel Chọn Model & Nút Đổi Shop (Chống xê dịch/drift)**:
+   - Cố định kích thước chuẩn các cột M (3), N (22), O (6) và các hàng 1..6 trên sheet `CANH BAO`.
+   - Nút **`SHOP: BODY [ BẤM ĐỔI XMĐ ]`** và các nút chức năng được gán thuộc tính `Placement = xlMoveAndSize`, khóa chặt vừa khít bên trong ô `N5:O6`, không còn hiện tượng xê dịch, tràn sang cột M hay che lấp các dòng mô tả và ô chọn checkbox khi nạp lại dữ liệu.
+   - Căn giữa toàn bộ Checkbox trong cột O thẳng hàng, thẩm mỹ cao.
 
-3. **Cập nhật nội dung cảnh báo Teams**:
-   - Đổi tiêu đề nhóm cảnh báo từ `... MÃ THIẾU TỒN` thành `... mã Ưu tiên Xuất`.
-   - Bảng cảnh báo hiển thị đầy đủ 100% tất cả các mã vật tư đạt điều kiện cảnh báo, không cắt bớt để đảm bảo người dùng nắm trọn vẹn thông tin mà không cần mở file tra cứu.
-   - Cột **Tồn MA** hiển thị nền trắng chữ rõ ràng (không tô màu nhầm lẫn với hàng thiếu), 3 cột còn lại (`Line Body`, `BD Kho`, `Khả năng lắp ráp`) giữ nguyên màu cảnh báo nổi bật.
-   - Tăng kích thước phông chữ và căn lề bảng to, rõ ràng hơn.
+3. **Cập nhật danh sách mã vật tư FG mới nhất từ `261021_Ma FG.xlsx`**:
+   - Tách riêng 23 mã dùng chung cho 2 dòng xe VF6 và VF7 (mỗi model 1 dòng riêng với `US = 1`) đúng theo chỉ đạo phân tách để tiện theo dõi.
+   - Cập nhật 2 mã thay thế EC: `BIW71005061HB` và `BIW71006061HB` (thay thế mã cũ đuôi số trơn).
+   - Bổ sung 5 mã mới VF6 (`BIW74239330AA` .. `440AA`), 2 mã VF8 Dập (`BIW30008492`, `30009561`), 1 mã VF9NP (`BIW35111320AA`), 1 mã Limo revision AC (`BIW32011830AC`).
+   - Cập nhật US cho `BIW32024120AA` (Limo) = 1, `BIW30210270` (VF6) = 2.
+   - Bổ sung cột phân loại **`Khu vực`** (`FG Hàn` / `FG Dập`) tại cột H sheet `DATA`.
+   - Bảo toàn 100% dữ liệu Xưởng XMĐ, VF9, Lạc Hồng và các bản RHD.
 
-4. **Hỗ trợ Universal Theme (Tương thích tuyệt đối cả Dark Mode và Light Mode)**:
-   - Bọc toàn bộ bảng HTML gửi qua Webhook vào thẻ chứa nền trắng chuẩn `#FFFFFF` với mã màu chữ cố định.
-   - Đảm bảo hiển thị hoàn hảo, không bị vỡ phông, tương phản ngược hay chìm chữ khi người dùng sử dụng Microsoft Teams ở Giao diện Sáng (Light Theme) lẫn Giao diện Tối (Dark Theme).
-   - Dung lượng gói HTML siêu nhẹ (~9.1 KB), an toàn 100% dưới ngưỡng 28 KB của Teams Incoming Webhook.
-
-5. **Đồng bộ Master Data 1,761 mã vật tư mới nhất**:
-   - Toàn vẹn 100% dữ liệu gốc, hỗ trợ đầy đủ các mã vật tư chuyển đổi mới nhất từ file `261008_Stock_FG_MA_BODYY.xlsm`.
+4. **Tích hợp Webhook riêng cho Báo Cáo Tổng Thể Kaizen (`CAU HINH`)**:
+   - Thêm cấu hình **`TEAMS_WEBHOOK_KAIZEN_URL`** tại ô A32 sheet `CAU HINH`.
+   - Cơ chế linh hoạt: Nếu người dùng điền URL webhook riêng -> tự động gửi Báo cáo Tổng thể vào nhóm Teams đó; nếu để trống -> tự động sử dụng link Webhook cũ (`TEAMS_WEBHOOK_URL`).
