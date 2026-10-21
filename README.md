@@ -20,9 +20,9 @@ tools/
 
 ### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.8 - 21/10/2026)
 *Báo cáo tổng thể Kaizen 2H (ma trận phân bổ số xe theo Model), sửa lỗi tỷ lệ %, khóa cố định panel chọn model, cập nhật mã mới 261021 & thêm webhook Kaizen riêng.*
-* **Tệp Excel chính thức**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `E92DF180998FA41AD23A7FE2A52236B71FED14DDD545022F572AE4DB7C646BC6`
-* **Gói nén ZIP**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip) — SHA-256: `1F82F42D79EDF39FCF7BE887DC101D43FD194063EE023A6537C8AABC8B5E842E`
-* **Bản cập nhật BODYY**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.xlsm) — SHA-256: `E7E30461EED14901D6BA323F3656DCC0B6B86F822CFC1082BDE27BC1CF1D236D` | [`ZIP`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.zip) (SHA-256: `3E8610CBCAA093E70C3F9C67B332203371413D6C46CFFF87FCC814C5AC3BFBC9`)
+* **Tệp Excel chính thức**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `33E0F7EC8F2E91C79B33686ECA3BB6B4EC3097D60ABCAF9A4A16BDA617257585`
+* **Gói nén ZIP**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip) — SHA-256: `04379AC142A9F21759CFFB39766A8907E7187EB1B592ECC24323E1185B6F9F15`
+* **Bản cập nhật BODYY**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.xlsm) — SHA-256: `2EF86E612F8587C36571071F35171A43A96FD59305567F1F8453AAA9718B5233` | [`ZIP`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.zip) (SHA-256: `C0E0329CC5A495E09282883AC562782A97D58F050457FDB23F6913FFDD0275CF`)
 * **Ghi chú phát hành**: [`tools/stock-fg-ma-body/README.md`](./tools/stock-fg-ma-body/README.md)
 
 ---
