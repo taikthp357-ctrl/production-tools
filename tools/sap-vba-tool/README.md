@@ -26,14 +26,16 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
 - **Tính năng nổi bật**:
   - Xử lý triệt để: Quét nhả tồn VL10D cho nhánh 3001, tự động hủy dòng mã ngoài trong OB 3001 trước khi Save (khử lỗi WMS VL589), và vá lỗi sập đọc lại chứng từ VL03N.
 
-#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.13 Mới Nhất)
+#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.14 Mới Nhất)
 - **Tải trực tiếp (.zip)**: 👉 **[261008_Stock_FG_MA_BODY.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip)**
 - **Tệp gốc (.xlsm)**: [`261008_Stock_FG_MA_BODY.xlsm`](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm)
-- **Tính năng nổi bật V3.7.13**:
-  - **Khắc phục triệt để lỗi đường cảnh báo Teams (`RequestEntityTooLarge` 413)**: Khống chế Top 15 mã cảnh báo khẩn cấp nhất, giảm kích thước payload từ 250 KB xuống chỉ còn ~11 KB (an toàn tuyệt đối dưới ngưỡng 28 KB của Power Automate).
-  - **Dữ liệu sống cho Báo cáo tổng thể Kaizen**: Chuyển đổi 100% các ô tổng và tỷ lệ sang công thức Excel động (`=SUBTOTAL(109, ...)`, `=SUM(...)`, `=IF(...)`), tự động cập nhật số liệu khi ẩn/hiện model.
-  - **Tối ưu Panel chọn Model**: Bổ sung 2 nút bấm thao tác nhanh `[ ✓ Chọn hết ]` và `[ ✗ Bỏ hết ]` cùng **Master Checkbox** tại dòng tiêu đề, xóa bỏ cảm giác trống ô phía trên và cho phép lọc model chỉ bằng 1 cú nhấp chuột.
-  - **Nút tải tồn trực tiếp**: Thêm nút `[ 📥 TẢI TỒN MB52 ]` ngay trên sheet `BAO CAO TONG THE`.
+- **Tính năng nổi bật V3.7.14**:
+  - **Bảo toàn 100% tất cả các mã cảnh báo (Đầy đủ 592 mã)**: Tuyệt đối không cắt xén, không bỏ bớt bất kỳ mã nào dưới tồn.
+  - **Cơ chế gửi theo từng Model riêng biệt (Single-Model Teams Message)**: Mỗi Model gửi 1 tin nhắn riêng biệt tag đúng PIC phụ trách model. Tự động chia đợt (tối đa 30 mã/tin) đối với các model có số lượng mã lớn (VF8, Lạc Hồng, VF9, VF5 RHD).
+  - **Triệt tiêu vĩnh viễn lỗi 413 `RequestEntityTooLarge`**: Khống chế toàn bộ payload từ 4.5 KB đến 21.0 KB (tuyệt đối an toàn dưới 28 KB của Teams), kèm độ trễ 1s giữa các tin nhắn chống Rate Limit.
+  - **Chuẩn hóa quy trình trên Báo cáo tổng thể**: Gỡ bỏ nút tải tồn thừa trên sheet `BAO CAO TONG THE`, trả lại đúng 3 nút chuẩn. Nút `[ 🔄 CẬP NHẬT MA TRẬN ]` chỉ đọc dữ liệu có sẵn trong `TON TONG` của lần tải MB52 đó và lọc theo model được chọn, chạy tức thì (< 0.15s), không quét lại MB52.
+  - **Dữ liệu sống động**: Toàn bộ dòng tổng và tỷ lệ dùng công thức Excel sống (`=SUBTOTAL(109, ...)`, `=SUM(...)`, `=IF(...)`).
+  - **Panel chọn Model trên `CANH BAO`**: Có nút `[ ✓ Chọn hết ]`, `[ ✗ Bỏ hết ]`, Master Checkbox và danh sách model sạch sẽ, không ô trống.
 
 ---
 

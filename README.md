@@ -18,12 +18,12 @@ tools/
 
 ## 🚀 Truy cập nhanh các bản phát hành mới nhất
 
-### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.8 - 21/10/2026)
-*Báo cáo tổng thể Kaizen 2H (ma trận phân bổ số xe theo Model), sửa lỗi tỷ lệ %, khóa cố định panel chọn model, cập nhật mã mới 261021 & thêm webhook Kaizen riêng.*
-* **Tệp Excel chính thức**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `7B0F6ECEB2DA0C057FA83527F7BC0E6E29773DDA36C93A9B12B3DCB9B6FAEE1D`
-* **Gói nén ZIP**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip) — SHA-256: `B5292FB65C091C79980915F5B4AC23F64F3659ADA0739EC4776309AF56B2C4A3`
-* **Bản cập nhật BODYY**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.xlsm) — SHA-256: `E4E80F70350257A83FFF50C829D79DB49F9F8F29D299A7B9B42987A67F7DBECD` | [`ZIP`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.zip) (SHA-256: `42A68E1CE3BFD50A261C8B53B05B5F8635ADCCAF3463D3DC6AB767AD8F4D6824`)
-* **Ghi chú phát hành**: [`tools/stock-fg-ma-body/README.md`](./tools/stock-fg-ma-body/README.md)
+### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.14 - 21/10/2026)
+*Gửi đầy đủ 100% mã cảnh báo dưới tồn (592 mã) theo từng Model riêng biệt, triệt tiêu lỗi 413 Teams Webhook (<21 KB/tin), chuẩn hóa 3 nút trên Báo cáo tổng thể không gọi RebuildViews, công thức Excel sống SUBTOTAL.*
+* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `c6e3954481ed646002043addd0c9b1e03242f2c0f6a0b4afacb1833e16d12ccf`
+* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `c8fffe24c6d489b5f03c4f10aa36f03a11e0264cdae3857172f26fb20f024f80`
+* **Bản phát hành V3.7**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm)
+* **Ghi chú phát hành**: [`tools/sap-vba-tool/README.md`](./tools/sap-vba-tool/README.md)
 
 ---
 
