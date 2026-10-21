@@ -4,10 +4,10 @@
 
 | Tên Tệp | Kích thước | SHA-256 |
 | :--- | :--- | :--- |
-| `261008_Stock_FG_MA_BODY.xlsm` | 940,328 bytes | `792D3BD843770D301D4D5C38DBFD7FB39524A5B280F3A127CDDE7FD396C8FE3C` |
-| `261008_Stock_FG_MA_BODY.zip` | 856,486 bytes | `21138C47223B02BB3B50DA6B6DC2BA49AF3E16F347A11249127E3595A033FA37` |
-| `261008_Stock_FG_MA_BODYY.xlsm` | 940,334 bytes | `289DBA3C3B2760C23F2F5A31E7E6BAE8EB3FFC07A8604DB5023F2636C185C07E` |
-| `261008_Stock_FG_MA_BODYY.zip` | 856,471 bytes | `E1E746A23056A8A7AA51B9FA3546C85E213ABF826455BD244838E4BA1C8A4C5E` |
+| `261008_Stock_FG_MA_BODY.xlsm` | 940,328 bytes | `E92DF180998FA41AD23A7FE2A52236B71FED14DDD545022F572AE4DB7C646BC6` |
+| `261008_Stock_FG_MA_BODY.zip` | 856,486 bytes | `1F82F42D79EDF39FCF7BE887DC101D43FD194063EE023A6537C8AABC8B5E842E` |
+| `261008_Stock_FG_MA_BODYY.xlsm` | 940,334 bytes | `E7E30461EED14901D6BA323F3656DCC0B6B86F822CFC1082BDE27BC1CF1D236D` |
+| `261008_Stock_FG_MA_BODYY.zip` | 856,471 bytes | `3E8610CBCAA093E70C3F9C67B332203371413D6C46CFFF87FCC814C5AC3BFBC9` |
 
 ---
 
@@ -36,3 +36,9 @@
 ### D. Tích hợp Webhook riêng cho Báo Cáo Tổng Thể Kaizen (`CAU HINH`)
 - Thêm cấu hình **`TEAMS_WEBHOOK_KAIZEN_URL`** tại ô A32 sheet `CAU HINH`.
 - Cơ chế linh hoạt: Nếu người dùng điền URL webhook riêng -> tự động gửi Báo cáo Tổng thể vào nhóm Teams đó; nếu để trống -> tự động sử dụng link Webhook cũ (`TEAMS_WEBHOOK_URL`).
+
+### E. Kích hoạt tự động gửi cảnh báo Teams ngay khi tải tồn xong
+- **Nguyên nhân**: Trong phiên bản trước, quy trình tải tồn kho `RefreshStock` khi hoàn thành xuất/nhập MB52 chỉ gọi tính toán tồn kho và lên lịch hẹn giờ kế tiếp mà không gọi `SendTeamsAlert`. Lệnh gửi cảnh báo chỉ nằm trong vòng lặp tự động `AutoRefresh`. Do đó khi người dùng tải tồn thủ công hoặc khi chưa bật AUTO, hệ thống tải xong nhưng không gửi tin nhắn.
+- **Khắc phục**:
+  * Đặt lệnh gọi `SendTeamsAlert AutoRun` và `SendTeamsKaizenReport AutoRun` trực tiếp ngay sau khi `Export_MB52` hoàn tất trong `RefreshStock`.
+  * Chuẩn hóa logic đếm cảnh báo: Nếu chưa tick chọn model cụ thể, hệ thống tự động fallback sang chế độ `ALL` để gửi trọn vẹn tất cả các mã cảnh báo hiện có trên sheet `CANH BAO`, loại bỏ hoàn toàn lỗi đếm 0 mã và bị skip.
