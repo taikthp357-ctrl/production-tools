@@ -26,12 +26,14 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
 - **Tính năng nổi bật**:
   - Xử lý triệt để: Quét nhả tồn VL10D cho nhánh 3001, tự động hủy dòng mã ngoài trong OB 3001 trước khi Save (khử lỗi WMS VL589), và vá lỗi sập đọc lại chứng từ VL03N.
 
-#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7)
+#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.13 Mới Nhất)
 - **Tải trực tiếp (.zip)**: 👉 **[261008_Stock_FG_MA_BODY.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip)**
 - **Tệp gốc (.xlsm)**: [`261008_Stock_FG_MA_BODY.xlsm`](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm)
-- **Tính năng nổi bật**:
-  - Đã đổi thứ tự cột: Line Body $\rightarrow$ BD Kho.
-  - Định dạng chuẩn US số nguyên, Font Times New Roman, đổ màu phân biệt text khi copy sang Teams.
+- **Tính năng nổi bật V3.7.13**:
+  - **Khắc phục triệt để lỗi đường cảnh báo Teams (`RequestEntityTooLarge` 413)**: Khống chế Top 15 mã cảnh báo khẩn cấp nhất, giảm kích thước payload từ 250 KB xuống chỉ còn ~11 KB (an toàn tuyệt đối dưới ngưỡng 28 KB của Power Automate).
+  - **Dữ liệu sống cho Báo cáo tổng thể Kaizen**: Chuyển đổi 100% các ô tổng và tỷ lệ sang công thức Excel động (`=SUBTOTAL(109, ...)`, `=SUM(...)`, `=IF(...)`), tự động cập nhật số liệu khi ẩn/hiện model.
+  - **Tối ưu Panel chọn Model**: Bổ sung 2 nút bấm thao tác nhanh `[ ✓ Chọn hết ]` và `[ ✗ Bỏ hết ]` cùng **Master Checkbox** tại dòng tiêu đề, xóa bỏ cảm giác trống ô phía trên và cho phép lọc model chỉ bằng 1 cú nhấp chuột.
+  - **Nút tải tồn trực tiếp**: Thêm nút `[ 📥 TẢI TỒN MB52 ]` ngay trên sheet `BAO CAO TONG THE`.
 
 ---
 
