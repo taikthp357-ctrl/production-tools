@@ -4,40 +4,42 @@ Công cụ giám sát tồn kho thành phẩm (FG) và cảnh báo nguy cơ thi�
 
 ---
 
-## 📌 Phiên bản phát hành mới nhất: Bản cập nhật (17/10/2026)
+## 📌 Phiên bản phát hành mới nhất: V3.7.8 (21/10/2026)
 
-* **Tệp Excel chính thức**: [`261008_Stock_FG_MA_BODY.xlsm`](./261008_Stock_FG_MA_BODY.xlsm) (SHA-256: `C49C2F26A00629E9EB6E669799BCBD2D84FBC928D1CEB1A8C5916F3B0690A4AB`)
-* **Gói nén ZIP tiêu chuẩn**: [`261008_Stock_FG_MA_BODY.zip`](./261008_Stock_FG_MA_BODY.zip) (SHA-256: `3B84CEFCB890289F43353E5CCF5E3D09B6374ED0D1AF500F30A2AF9509E2BC36`)
-* **Bản phiên hiệu V3.7 đồng bộ**: [`261008_Stock_FG_MA_BODY_V3_7.xlsm`](./261008_Stock_FG_MA_BODY_V3_7.xlsm) (SHA-256: `5CE55CFDF3582F55C9B42FD33F9223BFB081B20546D5A3605CA5D2613EDB4B94`) | [`ZIP`](./261008_Stock_FG_MA_BODY_V3_7.zip)
+* **Tệp Excel chính thức**: [`261008_Stock_FG_MA_BODY.xlsm`](./261008_Stock_FG_MA_BODY.xlsm) (SHA-256: `CC72B1B6D3E4AA895543647258724169A1CA438F99FC5578BA3B0D029E4CE880`)
+* **Gói nén ZIP tiêu chuẩn**: [`261008_Stock_FG_MA_BODY.zip`](./261008_Stock_FG_MA_BODY.zip) (SHA-256: `E198D4CC9A4D23325F5AFE1ECF5835E958BE9B927DAF9621361538572627EF3A`)
+* **Bản cập nhật BODYY**: [`261008_Stock_FG_MA_BODYY.xlsm`](./261008_Stock_FG_MA_BODYY.xlsm) (SHA-256: `6D8A72F13D3041AD1E2CD3DE09DFB14B57A2D895B11882A2BBB70525C9A41E6E`) | [`ZIP`](./261008_Stock_FG_MA_BODYY.zip) (SHA-256: `EDAC537375938851AA87DB9B8E694DDF6B2B8F296B9DD014B0BD316A12B8C7E0`)
+* **Bản phiên hiệu V3.7 đồng bộ**: [`261008_Stock_FG_MA_BODY_V3_7.xlsm`](./261008_Stock_FG_MA_BODY_V3_7.xlsm) | [`ZIP`](./261008_Stock_FG_MA_BODY_V3_7.zip)
 * **Ghi chú kỹ thuật chi tiết**: [`RELEASE_NOTES_V3_7.md`](./RELEASE_NOTES_V3_7.md)
 
 ---
 
-## 🛠 Tính năng nổi bật & Cập nhật mới (17/10/2026)
-1. **Đổ màu chữ khi Copy vào Microsoft Teams (Thay đổi màu text, giữ nền chuẩn)**:
-   - Khi bấm **`COPY CẢNH BÁO`** hoặc xem bảng cảnh báo:
-     * Cột **`BD Kho`** (Tồn Kho Body / ESC Kho): Chữ hiển thị **Màu Đỏ** (`RGB(192, 0, 0)`), in đậm.
-     * Cột **`BD Carset`** (Khả năng lắp ráp Body / ESC Carset): Chữ hiển thị **Màu Xanh** (`RGB(31, 122, 75)`), in đậm.
-     * Chỉ đổi màu text (`.Font.Color`), tuyệt đối không tô màu nền ô, đảm bảo bảng dán vào Teams hiển thị sắc nét, chuyên nghiệp, tương thích cả Dark Mode và Light Mode.
-2. **Định dạng US chuẩn số nguyên (Không dấu chấm thập phân)**:
-   - Định mức US hiển thị dạng số nguyên thuần túy (`"0"`), không có phần thập phân hay dấu chấm phía sau (`1`, `2`, `4`, `36`...).
-3. **Sửa logic cảnh báo vật tư MA**:
-   - Khi Kho MA = 0 và Line MA > 0: Cảnh báo chính xác **`Ưu tiên kéo line`** (không còn báo sai "ưu tiên xuất Body/XMĐ" khi kho không có hàng).
-   - Khi Kho MA > 0: `Ưu tiên xuất Body` / `Ưu tiên xuất XMĐ`.
-   - Khi cả Kho MA và Line MA = 0: `MA hết tồn`.
-4. **Đổi chuỗi trạng thái**:
-   - Chuyển thành `Hàng chờ xuất sang Body` (đối với Shop BODY) và `Hàng chờ xuất sang XMĐ` (đối với Shop XMĐ).
-5. **Chuẩn hóa Typography 100% Times New Roman**:
-   - Toàn bộ 6 sheet (`CANH BAO`, `TON TONG`, `DATA`, `CAU HINH`, `MB52`, `LOG`), panel chọn model và nút bấm chuyển sang phông Times New Roman đồng bộ.
-6. **Căn chỉnh & kẻ ô đầy đủ (Continuous Borders)**:
-   - Kẻ đường viền đầy đủ cho tất cả các bảng dữ liệu trên mọi sheet, căn giữa mã/model/trạm, căn phải số lượng và US, căn giữa in đậm chữ đỏ cho cảnh báo.
-7. **Nút chuyển đổi 1-Click (`Shop BODY` <-> `Shop XMĐ`)**:
-   - Dễ dàng chuyển đổi trực tiếp giữa 2 xưởng sản xuất ngay trên giao diện mà không cần cấu hình phức tạp.
-8. **Tách biệt và hiển thị rõ ràng mã Trước/Sau Sơn (Dành riêng cho XMĐ)**:
-   - Cột 1: `FG trước sơn`
-   - Cột 2: `FG sau sơn`
-   - Cột 4: `ESC trước sơn`
-   - Cột 5: `ESC sau sơn`
-   - Cột 6: `ESC Carset`
-9. **Bảo toàn dữ liệu Master Data**:
-   - Sheet `DATA` chỉ đọc, bảo toàn vĩnh viễn mọi cập nhật mã vật tư mới (như chuyển đuôi mã `AA` -> `HA`), không bao giờ bị ghi đè hay hoàn tác về dữ liệu cũ.
+## 🛠 Tính năng nổi bật & Cập nhật mới (V3.7.8 - 21/10/2026)
+
+1. **Sheet Báo Cáo Tổng Thể Kaizen 2H (`BAO CAO TONG THE`)**:
+   - Tự động thống kê ma trận phân bổ dải số xe (0, 1-20, 21-50, 51-100, 101-150, 151-200, 201-300, 301-400, >400 xe) theo từng Model xe (VF3, VF5, VF6, VF7, VF8, VF9, VFe34, EC...).
+   - Bao gồm 2 bảng ma trận chuẩn:
+     * **Bảng 1**: Thống kê theo `KHO BODY`.
+     * **Bảng 2**: Thống kê theo `(LINE + KHO) BODY`.
+   - Phân nhóm tổng hợp trực quan: Cột `<= 200XE` (nhóm ưu tiên kiểm soát nguy cơ) và Cột `> 200XE` (nhóm an toàn).
+   - Tích hợp nút bấm **`LÀM MỚI BÁO CÁO`** và **`GỬI BÁO CÁO TEAMS (2H)`** ngay trên sheet.
+
+2. **Khắc phục triệt để lỗi trôi thời gian hẹn giờ (Anti-Drift Fixed Wall-Clock Timer)**:
+   - Cơ chế neo mốc tròn đồng hồ (`GetNextRoundClock`): 
+     * Chu kỳ 60 phút neo chính xác: `07:00, 08:00, 09:00, 10:00...`
+     * Chu kỳ 120 phút neo chính xác các mốc chẵn: `06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00...`
+   - Dù tác vụ chạy mất bao nhiêu giây/phút, thời gian kích hoạt kế tiếp luôn khóa cố định theo mặt đồng hồ thực, không bao giờ bị trôi lệch tích lũy qua các ngày.
+
+3. **Cập nhật nội dung cảnh báo Teams**:
+   - Đổi tiêu đề nhóm cảnh báo từ `... MÃ THIẾU TỒN` thành `... mã Ưu tiên Xuất`.
+   - Bảng cảnh báo hiển thị đầy đủ 100% tất cả các mã vật tư đạt điều kiện cảnh báo, không cắt bớt để đảm bảo người dùng nắm trọn vẹn thông tin mà không cần mở file tra cứu.
+   - Cột **Tồn MA** hiển thị nền trắng chữ rõ ràng (không tô màu nhầm lẫn với hàng thiếu), 3 cột còn lại (`Line Body`, `BD Kho`, `Khả năng lắp ráp`) giữ nguyên màu cảnh báo nổi bật.
+   - Tăng kích thước phông chữ và căn lề bảng to, rõ ràng hơn.
+
+4. **Hỗ trợ Universal Theme (Tương thích tuyệt đối cả Dark Mode và Light Mode)**:
+   - Bọc toàn bộ bảng HTML gửi qua Webhook vào thẻ chứa nền trắng chuẩn `#FFFFFF` với mã màu chữ cố định.
+   - Đảm bảo hiển thị hoàn hảo, không bị vỡ phông, tương phản ngược hay chìm chữ khi người dùng sử dụng Microsoft Teams ở Giao diện Sáng (Light Theme) lẫn Giao diện Tối (Dark Theme).
+   - Dung lượng gói HTML siêu nhẹ (~9.1 KB), an toàn 100% dưới ngưỡng 28 KB của Teams Incoming Webhook.
+
+5. **Đồng bộ Master Data 1,761 mã vật tư mới nhất**:
+   - Toàn vẹn 100% dữ liệu gốc, hỗ trợ đầy đủ các mã vật tư chuyển đổi mới nhất từ file `261008_Stock_FG_MA_BODYY.xlsm`.

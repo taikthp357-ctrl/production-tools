@@ -18,10 +18,11 @@ tools/
 
 ## 🚀 Truy cập nhanh các bản phát hành mới nhất
 
-### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản cập nhật 17/10/2026)
-*Đổ màu text Teams: BD Kho màu đỏ, BD Carset màu xanh; sửa cảnh báo "Ưu tiên kéo line", font Times New Roman & kẻ ô toàn diện.*
-* **Tệp Excel chính thức**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `C49C2F26A00629E9EB6E669799BCBD2D84FBC928D1CEB1A8C5916F3B0690A4AB`
-* **Gói nén ZIP**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip) — SHA-256: `3B84CEFCB890289F43353E5CCF5E3D09B6374ED0D1AF500F30A2AF9509E2BC36`
+### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.8 - 21/10/2026)
+*Báo cáo tổng thể Kaizen 2H (ma trận phân bổ số xe theo Model), đồng hồ hẹn giờ chống trôi (Anti-Drift Timer), Universal Theme tương thích Dark/Light Teams, đổi nhãn 'mã Ưu tiên Xuất' & hiển thị 100% mã.*
+* **Tệp Excel chính thức**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `CC72B1B6D3E4AA895543647258724169A1CA438F99FC5578BA3B0D029E4CE880`
+* **Gói nén ZIP**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY.zip) — SHA-256: `E198D4CC9A4D23325F5AFE1ECF5835E958BE9B927DAF9621361538572627EF3A`
+* **Bản cập nhật BODYY**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.xlsm) — SHA-256: `6D8A72F13D3041AD1E2CD3DE09DFB14B57A2D895B11882A2BBB70525C9A41E6E` | [`ZIP`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODYY.zip) (SHA-256: `EDAC537375938851AA87DB9B8E694DDF6B2B8F296B9DD014B0BD316A12B8C7E0`)
 * **Ghi chú phát hành**: [`tools/stock-fg-ma-body/README.md`](./tools/stock-fg-ma-body/README.md)
 
 ---
