@@ -26,16 +26,15 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
 - **Tính năng nổi bật**:
   - Xử lý triệt để: Quét nhả tồn VL10D cho nhánh 3001, tự động hủy dòng mã ngoài trong OB 3001 trước khi Save (khử lỗi WMS VL589), và vá lỗi sập đọc lại chứng từ VL03N.
 
-#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.14 Mới Nhất)
+#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.15 Mới Nhất)
 - **Tải trực tiếp (.zip)**: 👉 **[261008_Stock_FG_MA_BODY.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip)**
 - **Tệp gốc (.xlsm)**: [`261008_Stock_FG_MA_BODY.xlsm`](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm)
-- **Tính năng nổi bật V3.7.14**:
-  - **Bảo toàn 100% tất cả các mã cảnh báo (Đầy đủ 592 mã)**: Tuyệt đối không cắt xén, không bỏ bớt bất kỳ mã nào dưới tồn.
-  - **Cơ chế gửi theo từng Model riêng biệt (Single-Model Teams Message)**: Mỗi Model gửi 1 tin nhắn riêng biệt tag đúng PIC phụ trách model. Tự động chia đợt (tối đa 30 mã/tin) đối với các model có số lượng mã lớn (VF8, Lạc Hồng, VF9, VF5 RHD).
-  - **Triệt tiêu vĩnh viễn lỗi 413 `RequestEntityTooLarge`**: Khống chế toàn bộ payload từ 4.5 KB đến 21.0 KB (tuyệt đối an toàn dưới 28 KB của Teams), kèm độ trễ 1s giữa các tin nhắn chống Rate Limit.
-  - **Chuẩn hóa quy trình trên Báo cáo tổng thể**: Gỡ bỏ nút tải tồn thừa trên sheet `BAO CAO TONG THE`, trả lại đúng 3 nút chuẩn. Nút `[ 🔄 CẬP NHẬT MA TRẬN ]` chỉ đọc dữ liệu có sẵn trong `TON TONG` của lần tải MB52 đó và lọc theo model được chọn, chạy tức thì (< 0.15s), không quét lại MB52.
-  - **Dữ liệu sống động**: Toàn bộ dòng tổng và tỷ lệ dùng công thức Excel sống (`=SUBTOTAL(109, ...)`, `=SUM(...)`, `=IF(...)`).
-  - **Panel chọn Model trên `CANH BAO`**: Có nút `[ ✓ Chọn hết ]`, `[ ✗ Bỏ hết ]`, Master Checkbox và danh sách model sạch sẽ, không ô trống.
+- **Tính năng nổi bật V3.7.15**:
+  - **Chốt chặn bảo vệ độ tươi dữ liệu (Data Freshness Gate 3 Lớp)**: Triệt tiêu vĩnh viễn lỗi gửi tồn cũ của 1 tiếng trước khi tắt máy, máy Sleep hoặc vừa mở máy lúc 8h. Nếu xuất MB52 thất bại hoặc dữ liệu tồn cũ hơn 15 phút, hệ thống tự động CHẶN GỬI TEAMS 100%, bảo toàn tính chính xác tuyệt đối.
+  - **Cải tiến Ngưỡng DOH đặt cùng cột tích Model theo từng Model**: Trên sheet `CANH BAO`, khối chọn Model mở rộng 3 cột `N: Model`, `O: Chọn [✓]`, `P: Ngưỡng DOH`. Người dùng có thể xem và nhấp đúp gõ sửa trực tiếp số ngưỡng DOH của từng model ngay tại cột P (tự động đồng bộ sang CAU HINH và tính lại ma trận tức thì mà không cần chuyển sheet).
+  - **Nhắc nhở khi User bật máy vào ca**: Khi mở file, nếu tồn kho từ ca trước (>60 phút), hệ thống đặt trạng thái nhắc nhở màu vàng để người dùng nạp tồn mới, sau đó mới phát cảnh báo chuẩn xác.
+  - **Bảo toàn 100% tất cả các mã cảnh báo (Đầy đủ 592 mã)**: Tuyệt đối không cắt xén, gửi theo từng Model riêng biệt tag đúng PIC phụ trách model, payload an toàn sub-21KB.
+  - **Chuẩn hóa 3 nút trên Báo cáo tổng thể & Công thức Excel sống**: Khởi tạo siêu tốc (<0.15s) bằng công thức sống `=SUBTOTAL(109, ...)`.
 
 ---
 

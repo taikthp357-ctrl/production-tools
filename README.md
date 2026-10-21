@@ -18,10 +18,10 @@ tools/
 
 ## 🚀 Truy cập nhanh các bản phát hành mới nhất
 
-### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.14 - 21/10/2026)
-*Gửi đầy đủ 100% mã cảnh báo dưới tồn (592 mã) theo từng Model riêng biệt, triệt tiêu lỗi 413 Teams Webhook (<21 KB/tin), chuẩn hóa 3 nút trên Báo cáo tổng thể không gọi RebuildViews, công thức Excel sống SUBTOTAL.*
-* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `c6e3954481ed646002043addd0c9b1e03242f2c0f6a0b4afacb1833e16d12ccf`
-* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `c8fffe24c6d489b5f03c4f10aa36f03a11e0264cdae3857172f26fb20f024f80`
+### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.15 - 22/10/2026)
+*Chốt chặn bảo vệ độ tươi dữ liệu 3 lớp triệt tiêu lỗi gửi tồn cũ lúc 8h khi tắt máy, cột Ngưỡng DOH đặt cùng cột tích Model hỗ trợ gõ sửa trực tiếp 2 chiều, gửi đầy đủ 100% mã theo từng Model riêng biệt.*
+* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `5701a7f927c9ad4510bb532764830fb1509409b4543cf789ede4e3bddfba9403`
+* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `94ef973a1e2e45d7346e72b0735f23500fbf3c6a8ba8dcace197bb932f5e2245`
 * **Bản phát hành V3.7**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm)
 * **Ghi chú phát hành**: [`tools/sap-vba-tool/README.md`](./tools/sap-vba-tool/README.md)
 
