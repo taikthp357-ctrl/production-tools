@@ -18,10 +18,10 @@ tools/
 
 ## 🚀 Truy cập nhanh các bản phát hành mới nhất
 
-### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.16 - 22/10/2026)
-*Cập nhật danh mục mã mới BODY (nâng cấp mã HB), phân tách Plant tải tồn MB52 theo Shop (BODY chỉ tải 3093/3001; XMĐ tải đủ 3093/2001/3001 check mã sau sơn GA), chốt chặn độ tươi dữ liệu 3 lớp.*
-* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `fc87f767625a2ae4a699f633c262de368e9824a2188c1166565e5a0c7a069e0a`
-* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `59d1183c4a3dad73f25b9811e5c223f8da95813b75b2078c8a97f493a1ed13f6`
+### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.17 - 22/10/2026)
+*Khắc phục triệt để lỗi nhánh báo cáo 2h/lần (khử bỏ InStr, loại trừ model ẩn, tổng SL mã khớp 100% Excel), tự động gửi Kaizen vào mốc giờ chẵn khi Auto, cập nhật mã revision HB BODY, phân tách Plant MB52 theo Shop.*
+* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `7368db33f890f097b10230072b261958313fe9d80139f185474460692bcf78bc`
+* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `d8058337ac84c6158019934b21ffb95f20f1a5a23f9e5dfa9778fe1412287e7b`
 * **Bản phát hành V3.7**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm)
 * **Ghi chú phát hành**: [`tools/sap-vba-tool/README.md`](./tools/sap-vba-tool/README.md)
 
