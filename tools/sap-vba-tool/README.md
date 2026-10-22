@@ -26,19 +26,28 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
 - **Tính năng nổi bật**:
   - Xử lý triệt để: Quét nhả tồn VL10D cho nhánh 3001, tự động hủy dòng mã ngoài trong OB 3001 trước khi Save (khử lỗi WMS VL589), và vá lỗi sập đọc lại chứng từ VL03N.
 
-#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.19 Mới Nhất)
+#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.20 Mới Nhất)
 - **Tải trực tiếp (.zip)**: 👉 **[261008_Stock_FG_MA_BODY.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip)**
 - **Tệp gốc (.xlsm)**: [`261008_Stock_FG_MA_BODY.xlsm`](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm)
-- **Tính năng nổi bật V3.7.19**:
-  - **Khôi phục toàn diện dữ liệu & quy trình Xe Máy Điện (XMĐ) song song cùng BODY**:
-    + **Tải tồn MB52 đầy đủ 100% cả 3 Plant (`3093`, `3001`, `2001`)**: Truy vấn đồng thời toàn bộ 1,268 mã chi tiết của cả BODY (1,639 dòng) và XMĐ (134 dòng). Không còn tình trạng MB52 chỉ tải riêng BODY làm mất tồn của XMĐ.
-    + **Chế độ xem Shop 3 trạng thái linh hoạt (ALL / BODY / XMĐ)**: Mặc định hiển thị `ALL` (Cả BODY & XMĐ). Nút bấm chuyển Shop `Btn_SwitchShop` tại `N3:P4` hỗ trợ chuyển đổi tuần hoàn 3 chế độ: `TẤT CẢ (BODY & XMĐ)` -> `BODY` -> `XMĐ` -> `TẤT CẢ`.
-    + **Đầy đủ 34 Model trên Panel chọn & Ngưỡng DOH**: Khi ở chế độ `ALL`, hiển thị đủ 13 model BODY và 21 model XMĐ cùng ô Checkbox và cột Ngưỡng DOH riêng biệt cho từng model.
-    + **Định danh chính xác Shop trong Cảnh báo Teams**: Hàm `GetModelShop` tự động nhận diện đúng Model thuộc xưởng BODY hay XMĐ để hiển thị tiêu đề chuẩn xác (e.g. `CẢNH BÁO TỒN KHO XMĐ - MODEL VF6,7`), tag đúng PIC phụ trách.
-  - **Bảo toàn toàn bộ cải tiến V3.7.18**:
-    + Chuẩn hóa Adaptive Card 1.4, bảng chi tiết 11 cột hiển thị hoàn hảo qua `table_html`, Single-Model dispatch sub-21KB (thực tế ~8.5KB) chống quá tải webhook.
-    + Báo cáo Kaizen 2h khớp 100% Excel, loại trừ model ẩn, tự động gửi vào mốc giờ chẵn.
-    + Chốt chặn độ tươi dữ liệu (Data Freshness Gate 3 Lớp), triệt tiêu lỗi gửi tồn cũ lúc 8h sáng.
+- **Tính năng nâng cấp nổi bật V3.7.20**:
+  - **Tải tồn MB52 theo Ngữ cảnh Shop & Model siêu tốc (1 - 3 giây)**:
+    + **BODY**: Chỉ truy vấn Plant `3093` (Kho MA) và `3001` (Kho Body), chỉ nạp mã của Model BODY đang chọn.
+    + **XMĐ**: Truy vấn đủ 3 Plant `3093`, `2001` và `3001` (bao quát toàn diện hàng GA sau sơn), nạp cả mã trước sơn và sau sơn của Model XMĐ đang chọn.
+    + **ALL**: Truy vấn cả 3 Plant cho toàn bộ model được chọn.
+    + **Bẫy an toàn**: Bật popup nhắc nhở nếu chưa chọn model nào, ngăn chặn truy vấn SAP vô ích.
+  - **Khắc phục triệt để lỗi Nút tích (Checkbox) bị lệch và méo mó**:
+    + Khóa cố định chiều cao dòng `RowHeight = 22pt` đồng bộ trước khi vẽ Checkbox.
+    + Loại bỏ vĩnh viễn lệnh `Rows.AutoFit` trên sheet `CANH BAO` (nguyên nhân gây lồi lõm chiều cao hàng).
+    + Chuyển thuộc tính sang `box.Placement = xlMove`, giữ nguyên hình vuông `16x16` pixel sắc nét, không bị co kéo hay méo mó khi lọc dữ liệu.
+  - **Sửa công thức tính tồn XMĐ (Bổ sung hàng sau sơn tại Plant 3001)**:
+    + Bổ sung tồn kho của `Mã sau sơn` tại Plant `3001` (SLoc `3001`, `30MF`, `1001`, `1012`, `1D01`) vào công thức.
+    + Ghi nhận trọn vẹn hơn **6,500 chi tiết sau sơn của GA**, chấm dứt triệt để tình trạng báo còi cọc ảo cho xe máy điện.
+  - **Chốt chặn thông minh tại ô B9**:
+    + Tự động nhận diện khi người dùng tích thêm Model mới nằm ngoài phạm vi vừa tải MB52.
+    + Ô `B9` lập tức hiển thị màu vàng cam nổi bật: *"Có thay đổi model/shop - Bấm [ TẢI TỒN MB52 ]"*, giúp người dùng kiểm soát chính xác độ mới của số liệu.
+  - **Bảo toàn trọn vẹn nền tảng V3.7.19**:
+    + Nút chuyển xưởng 3 trạng thái `Btn_SwitchShop` (`ALL` -> `BODY` -> `XMĐ` -> `ALL`).
+    + Chuẩn hóa Adaptive Card 1.4, Single-Model alert sub-21KB, bảng HTML 11 cột, báo cáo Kaizen 2h tự động vào các mốc giờ chẵn.
 
 ---
 

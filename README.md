@@ -18,10 +18,10 @@ tools/
 
 ## 🚀 Truy cập nhanh các bản phát hành mới nhất
 
-### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.19 - 22/10/2026)
-*Khôi phục toàn diện tích hợp Xe Máy Điện (XMĐ) song song cùng BODY (MB52 tải đủ 3 Plant 3093/3001/2001 cho 100% mã, chuyển Shop 3 trạng thái ALL/BODY/XMĐ, hiển thị đủ 34 model, tự động nhận diện Shop trong tiêu đề cảnh báo Teams).*
-* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `1054b39f38f60acb2d1669fc12e29e7589b5adcd976b477cb6db1e7a5e3fc4a5`
-* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `c2e1a920d82e2e764bf275f89fc6ba9913a56211c129e198b1f36361d9530cb9`
+### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.20 - 22/10/2026)
+*Nâng cấp tải tồn MB52 theo Ngữ cảnh Shop & Model siêu tốc 1-3s (BODY: 3093/3001, XMĐ: 3093/2001/3001); Trị dứt điểm lỗi Checkbox lệch méo (RowHeight 22pt chuẩn, xlMove, bỏ AutoFit); Bổ sung tồn hàng GA sau sơn tại Plant 3001 cho XMĐ; Chốt chặn B9 cảnh báo thông minh khi đổi Model.*
+* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `E7D506CE184B17B23C390DD337964AAEFF0571304EAD65C605F90B90ABAEE03A`
+* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `CA4A09AD95DC9EBFF6CCFB09C76444A286EC6F3962C0CB0A885E6CC9E826561E`
 * **Bản phát hành V3.7**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm)
 * **Ghi chú phát hành**: [`tools/sap-vba-tool/README.md`](./tools/sap-vba-tool/README.md)
 
