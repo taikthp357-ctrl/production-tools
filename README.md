@@ -18,10 +18,10 @@ tools/
 
 ## 🚀 Truy cập nhanh các bản phát hành mới nhất
 
-### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.15 - 22/10/2026)
-*Chốt chặn bảo vệ độ tươi dữ liệu 3 lớp triệt tiêu lỗi gửi tồn cũ lúc 8h khi tắt máy, cột Ngưỡng DOH đặt cùng cột tích Model hỗ trợ gõ sửa trực tiếp 2 chiều, gửi đầy đủ 100% mã theo từng Model riêng biệt.*
-* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `5701a7f927c9ad4510bb532764830fb1509409b4543cf789ede4e3bddfba9403`
-* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `94ef973a1e2e45d7346e72b0735f23500fbf3c6a8ba8dcace197bb932f5e2245`
+### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.16 - 22/10/2026)
+*Cập nhật danh mục mã mới BODY (nâng cấp mã HB), phân tách Plant tải tồn MB52 theo Shop (BODY chỉ tải 3093/3001; XMĐ tải đủ 3093/2001/3001 check mã sau sơn GA), chốt chặn độ tươi dữ liệu 3 lớp.*
+* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `fc87f767625a2ae4a699f633c262de368e9824a2188c1166565e5a0c7a069e0a`
+* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `59d1183c4a3dad73f25b9811e5c223f8da95813b75b2078c8a97f493a1ed13f6`
 * **Bản phát hành V3.7**: [`tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm`](./tools/stock-fg-ma-body/261008_Stock_FG_MA_BODY_V3_7.xlsm)
 * **Ghi chú phát hành**: [`tools/sap-vba-tool/README.md`](./tools/sap-vba-tool/README.md)
 

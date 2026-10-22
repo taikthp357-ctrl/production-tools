@@ -26,15 +26,17 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
 - **Tính năng nổi bật**:
   - Xử lý triệt để: Quét nhả tồn VL10D cho nhánh 3001, tự động hủy dòng mã ngoài trong OB 3001 trước khi Save (khử lỗi WMS VL589), và vá lỗi sập đọc lại chứng từ VL03N.
 
-#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.15 Mới Nhất)
+#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.16 Mới Nhất)
 - **Tải trực tiếp (.zip)**: 👉 **[261008_Stock_FG_MA_BODY.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip)**
 - **Tệp gốc (.xlsm)**: [`261008_Stock_FG_MA_BODY.xlsm`](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm)
-- **Tính năng nổi bật V3.7.15**:
-  - **Chốt chặn bảo vệ độ tươi dữ liệu (Data Freshness Gate 3 Lớp)**: Triệt tiêu vĩnh viễn lỗi gửi tồn cũ của 1 tiếng trước khi tắt máy, máy Sleep hoặc vừa mở máy lúc 8h. Nếu xuất MB52 thất bại hoặc dữ liệu tồn cũ hơn 15 phút, hệ thống tự động CHẶN GỬI TEAMS 100%, bảo toàn tính chính xác tuyệt đối.
-  - **Cải tiến Ngưỡng DOH đặt cùng cột tích Model theo từng Model**: Trên sheet `CANH BAO`, khối chọn Model mở rộng 3 cột `N: Model`, `O: Chọn [✓]`, `P: Ngưỡng DOH`. Người dùng có thể xem và nhấp đúp gõ sửa trực tiếp số ngưỡng DOH của từng model ngay tại cột P (tự động đồng bộ sang CAU HINH và tính lại ma trận tức thì mà không cần chuyển sheet).
-  - **Nhắc nhở khi User bật máy vào ca**: Khi mở file, nếu tồn kho từ ca trước (>60 phút), hệ thống đặt trạng thái nhắc nhở màu vàng để người dùng nạp tồn mới, sau đó mới phát cảnh báo chuẩn xác.
-  - **Bảo toàn 100% tất cả các mã cảnh báo (Đầy đủ 592 mã)**: Tuyệt đối không cắt xén, gửi theo từng Model riêng biệt tag đúng PIC phụ trách model, payload an toàn sub-21KB.
-  - **Chuẩn hóa 3 nút trên Báo cáo tổng thể & Công thức Excel sống**: Khởi tạo siêu tốc (<0.15s) bằng công thức sống `=SUBTOTAL(109, ...)`.
+- **Tính năng nổi bật V3.7.16**:
+  - **Cập nhật danh mục mã mới cho BODY**: Đã cập nhật đầy đủ danh sách mã mới cho xưởng BODY (1,639 mã), trong đó nâng cấp 4 mã mới sang revision HB (`BIW73010549HB` và `BIW73010520HB` cho VF5 RHD và VF5).
+  - **Phân tách Plant tải tồn MB52 theo Shop (BODY / XMĐ)**:
+    + Khi chọn **BODY**: MB52 chỉ tải đúng 2 Plant `3093` (Kho MA) và `3001` (Kho Body), loại bỏ Plant 2001 thừa giúp tải nhanh và nhẹ hơn.
+    + Khi chọn **XMĐ**: MB52 tự động tải đủ 3 Plant `3093`, `2001` (Kho GA/ESC trước & sau sơn), và `3001` để kiểm tra toàn diện cả mã sau sơn bên GA.
+  - **Chốt chặn bảo vệ độ tươi dữ liệu (Data Freshness Gate 3 Lớp)**: Triệt tiêu vĩnh viễn lỗi gửi tồn cũ lúc 8h khi vừa bật máy. Nếu xuất MB52 lỗi hoặc dữ liệu cũ > 15 phút, chặn gửi Teams 100%.
+  - **Cải tiến Ngưỡng DOH đặt cùng cột tích Model theo từng Model**: Cột P hiển thị ngưỡng DOH cho từng model, gõ sửa trực tiếp đồng bộ 2 chiều sang CAU HINH.
+  - **Bảo toàn 100% tất cả các mã cảnh báo**: Gửi theo từng Model riêng biệt tag đúng PIC phụ trách, payload an toàn sub-21KB.
 
 ---
 
