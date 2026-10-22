@@ -29,27 +29,19 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
 #### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.20 Mới Nhất)
 - **Tải trực tiếp (.zip)**: 👉 **[261008_Stock_FG_MA_BODY.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip)**
 - **Tệp gốc (.xlsm)**: [`261008_Stock_FG_MA_BODY.xlsm`](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm)
-- **Tính năng nâng cấp nổi bật V3.7.20**:
+- **Tính năng nâng cấp & vá lỗi V3.7.20**:
+  - **Khắc phục dứt điểm lỗi Chặn Cảnh báo Teams sau khi tải MB52 thành công (Freshness Gate Fix)**:
+    + Thay thế hàm `V2Config` đọc chuỗi bằng `GetLastSuccessDate()` xử lý đa tầng: số serial Excel thực (`> 40000`), chuỗi ISO chuẩn và chuỗi ngày chuẩn. Triệt tiêu tận gốc lỗi *"Chưa có mốc thời gian tải MB52 thành công"*.
+  - **Hợp nhất hàm gửi HTTP độc lập (`SendTeamsHttpPost`) & Khắc phục Status=0**:
+    + Khởi tạo HTTP object độc lập mỗi request (`MSXML2.ServerXMLHTTP.6.0` / fallback), cấu hình timeout chuẩn (5s/5s/15s/30s), bắt trọn vẹn lỗi hệ thống thật (`Err.Number: Err.Description`).
+  - **Tách biệt độc lập 2 nhánh báo cáo (Decoupling Architecture)**:
+    + Tải tồn thành công -> Cảnh báo tức thời được gửi ngay; Báo cáo Kaizen chỉ gửi khi đến mốc giờ chẵn hoặc bấm nút thủ công. Nhánh này lỗi không ảnh hưởng nhánh kia.
   - **Tải tồn MB52 theo Ngữ cảnh Shop & Model siêu tốc (1 - 3 giây)**:
-    + **BODY**: Chỉ truy vấn Plant `3093` (Kho MA) và `3001` (Kho Body), chỉ nạp mã của Model BODY đang chọn.
-    + **XMĐ**: Truy vấn đủ 3 Plant `3093`, `2001` và `3001` (bao quát toàn diện hàng GA sau sơn), nạp cả mã trước sơn và sau sơn của Model XMĐ đang chọn.
-    + **ALL**: Truy vấn cả 3 Plant cho toàn bộ model được chọn.
-    + **Bẫy an toàn**: Bật popup nhắc nhở nếu chưa chọn model nào, ngăn chặn truy vấn SAP vô ích.
+    + BODY chỉ tải Plant 3093 & 3001 cho model đang chọn; XMĐ tải Plant 3093, 2001 & 3001 (hàng GA sau sơn); ALL tải cả 3 Plant.
   - **Khắc phục triệt để lỗi Nút tích (Checkbox) bị lệch và méo mó**:
-    + Khóa cố định chiều cao dòng `RowHeight = 22pt` đồng bộ trước khi vẽ Checkbox.
-    + Loại bỏ vĩnh viễn lệnh `Rows.AutoFit` trên sheet `CANH BAO` (nguyên nhân gây lồi lõm chiều cao hàng).
-    + Chuyển thuộc tính sang `box.Placement = xlMove`, giữ nguyên hình vuông `16x16` pixel sắc nét, không bị co kéo hay méo mó khi lọc dữ liệu.
+    + Chuẩn hóa chiều cao dòng `RowHeight = 22pt`, loại bỏ `Rows.AutoFit`, chuyển `box.Placement = xlMove` (14/14 checkbox vuông vắn 16x16 pixel).
+    + Màu chữ tiêu đề N6:P6 ("Model", "Ngưỡng DOH") đổi sang xanh đậm `RGB(23, 58, 89)` rõ ràng, sắc nét.
   - **Sửa công thức tính tồn XMĐ (Bổ sung hàng sau sơn tại Plant 3001)**:
-    + Bổ sung tồn kho của `Mã sau sơn` tại Plant `3001` (SLoc `3001`, `30MF`, `1001`, `1012`, `1D01`) vào công thức.
-    + Ghi nhận trọn vẹn hơn **6,500 chi tiết sau sơn của GA**, chấm dứt triệt để tình trạng báo còi cọc ảo cho xe máy điện.
-  - **Chốt chặn thông minh tại ô B9**:
-    + Tự động nhận diện khi người dùng tích thêm Model mới nằm ngoài phạm vi vừa tải MB52.
-    + Ô `B9` lập tức hiển thị màu vàng cam nổi bật: *"Có thay đổi model/shop - Bấm [ TẢI TỒN MB52 ]"*, giúp người dùng kiểm soát chính xác độ mới của số liệu.
-  - **Bảo toàn trọn vẹn nền tảng V3.7.19**:
-    + Nút chuyển xưởng 3 trạng thái `Btn_SwitchShop` (`ALL` -> `BODY` -> `XMĐ` -> `ALL`).
-    + Chuẩn hóa Adaptive Card 1.4, Single-Model alert sub-21KB, bảng HTML 11 cột, báo cáo Kaizen 2h tự động vào các mốc giờ chẵn.
+    + Ghi nhận hơn 6,500 chi tiết sau sơn của GA vào công thức tính tồn.
 
----
 
-### 🛡️ Bảng Mã Băm Toàn Vẹn (SHA-256)
-Tra cứu chi tiết tại [`SHA256SUMS.txt`](SHA256SUMS.txt).
