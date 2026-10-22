@@ -26,22 +26,21 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
 - **Tính năng nổi bật**:
   - Xử lý triệt để: Quét nhả tồn VL10D cho nhánh 3001, tự động hủy dòng mã ngoài trong OB 3001 trước khi Save (khử lỗi WMS VL589), và vá lỗi sập đọc lại chứng từ VL03N.
 
-#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.20 Mới Nhất)
+#### 3. Quản Trị & Cảnh Báo Tồn Kho Thành Phẩm (Bản Chuẩn V3.7.21 Mới Nhất)
 - **Tải trực tiếp (.zip)**: 👉 **[261008_Stock_FG_MA_BODY.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip)**
 - **Tệp gốc (.xlsm)**: [`261008_Stock_FG_MA_BODY.xlsm`](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm)
-- **Tính năng nâng cấp & vá lỗi V3.7.20**:
-  - **Khắc phục dứt điểm lỗi Chặn Cảnh báo Teams sau khi tải MB52 thành công (Freshness Gate Fix)**:
-    + Thay thế hàm `V2Config` đọc chuỗi bằng `GetLastSuccessDate()` xử lý đa tầng: số serial Excel thực (`> 40000`), chuỗi ISO chuẩn và chuỗi ngày chuẩn. Triệt tiêu tận gốc lỗi *"Chưa có mốc thời gian tải MB52 thành công"*.
-  - **Hợp nhất hàm gửi HTTP độc lập (`SendTeamsHttpPost`) & Khắc phục Status=0**:
-    + Khởi tạo HTTP object độc lập mỗi request (`MSXML2.ServerXMLHTTP.6.0` / fallback), cấu hình timeout chuẩn (5s/5s/15s/30s), bắt trọn vẹn lỗi hệ thống thật (`Err.Number: Err.Description`).
-  - **Tách biệt độc lập 2 nhánh báo cáo (Decoupling Architecture)**:
-    + Tải tồn thành công -> Cảnh báo tức thời được gửi ngay; Báo cáo Kaizen chỉ gửi khi đến mốc giờ chẵn hoặc bấm nút thủ công. Nhánh này lỗi không ảnh hưởng nhánh kia.
-  - **Tải tồn MB52 theo Ngữ cảnh Shop & Model siêu tốc (1 - 3 giây)**:
-    + BODY chỉ tải Plant 3093 & 3001 cho model đang chọn; XMĐ tải Plant 3093, 2001 & 3001 (hàng GA sau sơn); ALL tải cả 3 Plant.
-  - **Khắc phục triệt để lỗi Nút tích (Checkbox) bị lệch và méo mó**:
-    + Chuẩn hóa chiều cao dòng `RowHeight = 22pt`, loại bỏ `Rows.AutoFit`, chuyển `box.Placement = xlMove` (14/14 checkbox vuông vắn 16x16 pixel).
-    + Màu chữ tiêu đề N6:P6 ("Model", "Ngưỡng DOH") đổi sang xanh đậm `RGB(23, 58, 89)` rõ ràng, sắc nét.
-  - **Sửa công thức tính tồn XMĐ (Bổ sung hàng sau sơn tại Plant 3001)**:
-    + Ghi nhận hơn 6,500 chi tiết sau sơn của GA vào công thức tính tồn.
+- **Tính năng nâng cấp nổi bật V3.7.21**:
+  - **Nâng cấp thuật toán chia tin động theo dung lượng byte UTF-8 (Dynamic Chunking <= 25 KB)**:
+    + Bỏ giới hạn cố định 30 mã/tin. Dựng toàn bộ Adaptive Card 1.4 + Tag PIC + Header + Bảng HTML 11 cột và đo chính xác dung lượng byte UTF-8 qua `ADODB.Stream`.
+    + Thiết lập ngưỡng an toàn 25 KB (25,600 bytes) chừa 3 KB đệm so với trần 28 KB của Teams.
+    + Nếu dung lượng <= 25 KB, gửi chung **1 tin nhắn duy nhất** (ví dụ Model VF6 có 31 mã ~13.3 KB gửi trọn vẹn trong 1 tin, không còn bị xé lẻ 1 mã sang tin thứ 2).
+    + Khi vượt 25 KB (model có >55-60 mã), tự động chia phần cân đối: `VF6 — Phần 1/2`, `VF6 — Phần 2/2` (đảm bảo không trùng, không sót mã).
+    + Ghi LOG chi tiết: `[TEAMS_ALERT] PASS | Model VF6 (1/1): 31/31 ma - 13.3 KB (13619 B) - HTTP 202`.
+  - **Bảo toàn toàn bộ các tính năng V3.7.20**:
+    + Freshness gate `GetLastSuccessDate` đọc ngày serial Excel không bị chặn gửi.
+    + Hàm gửi HTTP độc lập `SendTeamsHttpPost` bắt trọn lỗi thật.
+    + Tải MB52 theo ngữ cảnh Shop & Model siêu tốc 1-3s (BODY: 3093/3001, XMĐ: 3093/2001/3001 bao quát hàng GA sau sơn).
+    + Khắc phục triệt để Checkbox lệch méo (RowHeight 22pt, `box.Placement = xlMove`).
+    + Màu chữ tiêu đề Model xanh đậm `RGB(23, 58, 89)`.
 
 

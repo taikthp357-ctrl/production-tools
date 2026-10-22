@@ -18,10 +18,10 @@ tools/
 
 ## 🚀 Truy cập nhanh các bản phát hành mới nhất
 
-### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.20 - 22/10/2026)
-*Nâng cấp tải tồn MB52 theo Ngữ cảnh Shop & Model siêu tốc 1-3s; Trị dứt điểm lỗi Checkbox lệch méo (RowHeight 22pt chuẩn, xlMove, bỏ AutoFit); Bổ sung tồn hàng GA sau sơn tại Plant 3001 cho XMĐ; Vá triệt để lỗi đọc ngày serial chặn cảnh báo Teams (GetLastSuccessDate); Hợp nhất hàm HTTP độc lập SendTeamsHttpPost; Tách rời độc lập 2 nhánh Cảnh báo & Kaizen; Cố định màu chữ tiêu đề Model xanh đậm.*
-* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `EACFEE451EDD602B019C446E3D2A7504B24D70BD4E35EFDC698C73D311983EEE`
-* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `F73802E994DA5A81A00128BA4C5447C22988AFB3044C66DA88F8736C5EB2B8E3`
+### 1. 📊 [Stock FG MA BODY](./tools/stock-fg-ma-body/) (Bản phát hành V3.7.21 - 22/10/2026)
+*Nâng cấp thuật toán chia tin động theo dung lượng byte UTF-8 thực tế (Dynamic Chunking <= 25 KB); Bỏ giới hạn cố định 30 mã/tin, gom toàn bộ mã model (ví dụ VF6 31 mã gửi chung 1 tin duy nhất, không còn tách lẻ 1 mã); Khi vượt ngưỡng (>25 KB) tự động chia phần cân đối kèm định danh Phần 1/N rõ ràng; Ghi LOG minh bạch số mã và dung lượng byte từng phần.*
+* **Tệp Excel chính thức**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.xlsm) — SHA-256: `F7A421F44934BEAF6C775622C55D4E34F6674CAAA2F3ABF36774CF214196EFF7`
+* **Gói nén ZIP**: [`tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip`](./tools/sap-vba-tool/261008_Stock_FG_MA_BODY.zip) — SHA-256: `B414C48AD88AFB23B5263AF2E4A0306F4607A6CA49CC53C61198065E9986E1F9`
 
 ### 2. ⚡ [OB Tool V1 RC65](./tools/ob-tool/) (Cập nhật 17/10/2026)
 *Quét VL10D 1 lần cho nhánh 3001 (bỏ qua batch thiếu nếu hết STO), hủy dòng mã ngoài trong OB 3001 trước Save triệt tiêu lỗi VL589, vá sập đọc lại VL03N.*

@@ -1,0 +1,28 @@
+## 🚀 Phiên Bản V3.7.21 - Nâng Cấp Thuật Toán Chia Tin Động Theo Dung Lượng Byte (Dynamic Chunking) & Tối Ưu Báo Cáo Teams
+
+### 🌟 Điểm Cải Tiến Trọng Yếu:
+1. **Loại bỏ giới hạn cứng 30 mã/tin, chuyển sang chia theo dung lượng UTF-8 thực tế**:
+   - Trước đây dùng công thức chia cố định `(mCount + 29) \ 30`, dẫn tới tình trạng dở khóc dở cười: ví dụ Model **VF6 có 31 mã** bị tách làm 2 tin (Tin 1: 30 mã, Tin 2: trơ trọi đúng **1 mã lẻ loi**).
+   - Bản V3.7.21 dựng toàn bộ Adaptive Card 1.4 + Tag PIC + Header + Bảng HTML 11 cột, sau đó dùng `ADODB.Stream` đo chính xác dung lượng byte UTF-8 của payload.
+   - Thiết lập ngưỡng an toàn nội bộ **25 KB (25,600 bytes)**, dự phòng 3 KB an toàn trước giới hạn trần 28 KB của Teams.
+   - Nếu toàn bộ danh sách mã của model có dung lượng `<= 25 KB`, tool gom và gửi trong **1 tin nhắn duy nhất**. Với 31 mã của VF6 (13.3 KB ~ 13,619 bytes), toàn bộ được gửi chung 1 tin duy nhất, không còn tin thứ hai.
+2. **Chia phần cân đối & Định danh rõ ràng khi vượt ngưỡng (> 25 KB)**:
+   - Khi một model có số lượng mã rất lớn (> 55-60 mã) vượt 25 KB, thuật toán tự động tính toán số phần tối thiểu và phân bổ số dòng cân đối giữa các phần (ví dụ 80 mã sẽ chia làm 2 phần đều đặn 40 mã / 40 mã ~15.4 KB mỗi phần, thay vì dồn cục).
+   - Tiêu đề từng phần ghi rõ: `VF6 — Phần 1/2 (40 mã)`, `VF6 — Phần 2/2 (40 mã)`, đảm bảo tính liên tục, không sót và không trùng lặp mã.
+3. **Ghi LOG minh bạch, chi tiết**:
+   - Ghi nhận chi tiết vào sheet `LOG`:
+     `[TEAMS_ALERT] PASS | Model VF6 (1/1): 31/31 ma - 13.3 KB (13619 B) - HTTP 202`
+     Giúp quản trị viên kiểm tra là thấy ngay số byte thực tế của từng tin nhắn.
+4. **Bảo toàn 100% các nâng cấp nền tảng V3.7.20**:
+   - Cơ chế đọc ngày serial `GetLastSuccessDate` không bị chặn cảnh báo.
+   - Hàm gửi HTTP độc lập `SendTeamsHttpPost` bắt trọn lỗi thật.
+   - Chiều cao dòng chuẩn 22pt, 14 Checkbox `xlMove` vuông vắn 16x16 px chống méo lệch.
+   - Màu chữ tiêu đề Model xanh đậm `RGB(23, 58, 89)`.
+   - Bổ sung tồn hàng GA sau sơn tại Plant 3001 cho Xe máy điện.
+
+### 📦 Bảng Mã Băm SHA-256 Xác Thực:
+- `261008_Stock_FG_MA_BODY.xlsm`     : `F7A421F44934BEAF6C775622C55D4E34F6674CAAA2F3ABF36774CF214196EFF7`
+- `261008_Stock_FG_MA_BODY.zip`      : `B414C48AD88AFB23B5263AF2E4A0306F4607A6CA49CC53C61198065E9986E1F9`
+- `261008_Stock_FG_MA_BODY_V3_7.xlsm`: `F7A421F44934BEAF6C775622C55D4E34F6674CAAA2F3ABF36774CF214196EFF7`
+- `261008_Stock_FG_MA_BODY_V3_7.zip` : `A8DF5A5B012785F12CAD5644CA411EB1D6A72B90F9B7E846A51D9E9151FD38BE`
+- `BO_CONG_CU_SAP_VBA_LATEST.zip`    : `2B8338FB2C1B53C99A3535AF7D34E4C0A84C92747E95B348A2C51BFEEB30388F`
