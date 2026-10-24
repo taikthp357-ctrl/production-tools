@@ -43,13 +43,15 @@ Thư mục này tập hợp các tệp công cụ Excel VBA chính thức, mới
     + Khắc phục triệt để Checkbox lệch méo (RowHeight 22pt, `box.Placement = xlMove`).
     + Màu chữ tiêu đề Model xanh đậm `RGB(23, 58, 89)`.
 
-#### 4. Đối Soát Cấp Line & Soi Lệch MB51 (Bản Chuẩn V1 - VinFast NMVFHP)
-- **Tải trực tiếp trọn bộ (.zip)**: 📥 **[261023_Tracking_CapLine_MB51_vs_ThucTe.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261023_Tracking_CapLine_MB51_vs_ThucTe.zip)** *(Bao gồm cả file Excel và Script VBS)*
-- **Tệp Excel gốc (.xlsx)**: [261023_Tracking_CapLine_MB51_vs_ThucTe.xlsx](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261023_Tracking_CapLine_MB51_vs_ThucTe.xlsx)
-- **Kịch bản VBScript kéo SAP MB51 (.vbs)**: [261023_mb51_pull_311.vbs](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261023_mb51_pull_311.vbs)
-- **Tính năng nổi bật**:
-  - Gồm 2 dạng báo cáo chuẩn nghiệp vụ:
-    + **Báo cáo Chênh lệch GAP (BC_GAP)**: Thiết kế 1 dòng/1 mã, tích hợp 3 thẻ KPI tổng ca, tự động tô đỏ thiếu, tô vàng dư, hiển thị - khi khớp, chỉ đích danh khung giờ bị lệch.
-    + **Báo cáo Tiến độ Thực nhận (BC_THUC_NHAN)**: Theo dõi sản lượng thực tế line nhận được từng giờ và tốc độ cấp hàng toàn xưởng.
-  - Tách bạch 3 lớp an toàn: Sheet Nhập liệu INPUT_THUC_TE, Sheet Dữ liệu SAP RAW_MB51 (tự động map giờ post CPUTM thành khung giờ và trừ phiếu hủy 312), Sheet Báo cáo chỉ xem (Read-only).
-  - Tích hợp dữ liệu thực tế từ hệ thống MFG (Plant 3001, Kho xuất 1003, Kho nhận 3003, Movement Type 311/312).
+#### 4. Đối Soát Cấp Line & Soi Lệch MB51 (Bản Chuẩn V1 Gắn Trực Tiếp Tool - NMVFHP)
+- **Tải trực tiếp trọn bộ (.zip)**: 📥 **[261023_Tracking_CapLine_MB51_vs_ThucTe.zip](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261023_Tracking_CapLine_MB51_vs_ThucTe.zip)** *(Chứa file .xlsm có gắn sẵn Macro 1-Click + file .xlsx)*
+- **Tệp Excel Macro Gắn Sẵn Tool (.xlsm)**: 📊 **[261023_Tracking_CapLine_MB51_vs_ThucTe.xlsm](https://raw.githubusercontent.com/taikthp357-ctrl/production-tools/main/tools/sap-vba-tool/261023_Tracking_CapLine_MB51_vs_ThucTe.xlsm)**
+- **Tính năng tích hợp trực tiếp (All-In-One)**:
+  - **Nút bấm 1-Click gắn trực tiếp trên Sheet BC_GAP và RAW_MB51**:
+    + [ 🔄 TẢI DỮ LIỆU SAP MB51 ]: Tự động kết nối SAP GUI, mở MB51 lọc Plant 3001, Kho nhận 3003, Movement Types 311/312 ngày hôm nay, trích xuất dữ liệu thẳng vào sheet RAW_MB51 và làm mới báo cáo. Không cần chạy script bên ngoài!
+    + [ 📊 LÀM MỚI BÁO CÁO ]: Tính toán lại toàn bộ dữ liệu đối soát.
+    + [ 🧹 XÓA DỮ LIỆU RAW ]: Dọn sạch bảng dữ liệu cũ trên sheet RAW_MB51.
+  - **2 Dạng báo cáo chuyên biệt**:
+    + **Báo cáo Chênh lệch GAP (BC_GAP)**: Soi chi tiết theo giờ, 3 thẻ KPI tổng, tự động highlight đỏ/vàng khi phát sinh chênh lệch.
+    + **Báo cáo Tiến độ Line Nhận (BC_THUC_NHAN)**: Thống kê sản lượng thực tế nhận được theo từng khung giờ.
+  - **Master data chuẩn hóa**: Tích hợp danh mục mã và thông số từ 261015_Ord hang MFG (2).xlsb (Plant 3001, Kho 1003 sang 3003).
